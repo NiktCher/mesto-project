@@ -10,7 +10,7 @@
   background-color: #000;
   vertical-align: top;
   border: 1px solid #fff;
-  transition: opacity 0.4s ease;
+  transition: opacity 0.3s linear;
 }
 
 .profile__edit-button:hover {

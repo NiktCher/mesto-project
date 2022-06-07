@@ -9,7 +9,7 @@
   background-position: 50%;
   background-color: #000;
   border: 2px solid #fff;
-  transition: opacity 0.4s ease;
+  transition: opacity 0.3s linear;
 }
 
 .profile__add-button:hover {
@@ -19,7 +19,7 @@
 
 @media screen and (max-width: 1060px) {
   .profile__add-button {
-    margin: 32 0 0 0;
+    margin: 32px 0 0 0;
   }
 }
 
