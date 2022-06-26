@@ -16,8 +16,6 @@
   content: "";
   height: 100%;
   width: 100%;
-  display: inline-block;
-  vertical-align: middle;
   background-color: black;
   opacity: 0.5;
 }
