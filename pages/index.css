@@ -17,14 +17,22 @@
 @import url(../blocks/profile/__description/profile__description.css);
 @import url(../blocks/profile/__add-button/profile__add-button.css);
 
-/*Секция places */
-@import url(../blocks/places/places.css);
-@import url(../blocks/place/place.css);
-@import url(../blocks/place/__title/place__title.css);
-@import url(../blocks/place/__title-wrap/place__title-wrap.css);
-@import url(../blocks/place/__image/place__image.css);
-@import url(../blocks/place/__like/place__like.css);
-@import url(../blocks/place/__like/_active/place__like_active.css);
+/*Секция elements*/
+@import url(../blocks/elements/elements.css);
+@import url(../blocks/element/element.css);
+@import url(../blocks/element/__title/element__title.css);
+@import url(../blocks/element/__list/element__list.css);
+@import url(../blocks/element/__image/element__image.css);
+@import url(../blocks/element/__description/element__description.css);
+@import url(../blocks/element/__like-button/element__like-button.css);
+@import url(../blocks/element/__like-button/_active/element__like-button_active.css);
+@import url(../blocks/element/__delete-button/element__delete-button.css);
+@import url(../blocks/element/__button/element__button.css);
+
+/*figure*/
+@import url(../blocks/figure/figure.css);
+@import url(../blocks/figure/__image/figure__image.css);
+
 
 /*Секция с popup*/  
 @import url(../blocks/popup/popup.css);
@@ -35,7 +43,9 @@
 @import url(../blocks/popup/__item/popup__item.css);
 @import url(../blocks/popup/__submit-button/popup__submit-button.css);
 @import url(../blocks/popup/__close-button/popup__close-button.css);
-
+@import url(../blocks/popup/_card/popup_card.css);
+@import url(../blocks/popup/_profile-edit/popup_profile-edit.css);
+@import url(../blocks/popup/_card-add/popup_card-add.css/);
 
 /*footer*/
 @import url(../blocks/footer/footer.css);
