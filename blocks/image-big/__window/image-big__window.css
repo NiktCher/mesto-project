@@ -1,0 +1,13 @@
+.image-big__window {
+    display: flex;
+    justify-content: space-between;
+    position:fixed;
+    z-index: 2;
+}
+
+@media screen and (max-width: 550px) {
+    .image-big__window {
+        margin: 0;
+        flex-direction: column-reverse; 
+    }
+}

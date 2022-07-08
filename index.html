@@ -1,83 +1,139 @@
 <!DOCTYPE html>
 <html lang="ru">
-
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="./pages/index.css">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="./pages/index.css" />
     <title>Mesto</title>
-</head>
+  </head>
 
-<body class="page">
+  <body class="page">
     <header class="header">
-        <img src="./images/heder_logo.svg" class="header__logo" alt="Логотип сайта">
+      <img
+        src="./images/heder_logo.svg"
+        class="header__logo"
+        alt="Логотип сайта"
+      />
     </header>
     <main class="content">
-        <section class="profile">
-            <img class="profile__image" src="./images/kysto.jpg" alt="Аватарка">
-            <div class="profile__info">
-                <h1 class="profile__name">Жак-Ив Кусто</h1>
-                <button type="button" class="profile__edit-button" title="Редактировать профиль" id="edit-button"></button>
-                <p class="profile__description">Исследователь океана</p>
-            </div>
-            <button type="button" class="profile__add-button"></button>
-        </section>
-       <section class="elements">
-        <ul class ="element__list">
-
-        </ul>
+      <section class="profile">
+        <img class="profile__image" src="./images/kysto.jpg" alt="Аватарка" />
+        <div class="profile__info">
+          <h1 class="profile__name">Жак-Ив Кусто</h1>
+          <button
+            type="button"
+            class="profile__edit-button"
+            title="Редактировать профиль"
+            id="edit-button"
+          ></button>
+          <p class="profile__description">Исследователь океана</p>
+        </div>
+        <button type="button" class="profile__add-button"></button>
+      </section>
+      <section class="places"></section>
     </main>
     <footer class="footer">
-        <p class="footer__copyright">&copy; 2020 Mesto Russia</p>
+      <p class="footer__copyright">&copy; 2020 Mesto Russia</p>
     </footer>
 
-    <div class="popup popup_profile-edit">
-        <div class="popup__window">
-            <form class="popup__form" name="profile-edit">
-                <h2 class="popup__title">Редактировать профиль</h2>
-                <input class="popup__item" type="text" name="username" id="username" placeholder="Жак-Ив Кусто" required>
-                <input class="popup__item" type="text" name="description" id="description" placeholder="Исследователь океана"
-                    required>
-                <button class="popup__submit-button" type="submit">Сохранить</button>
-            </form>
-            <button class="popup__close-button" type="button"></button>
-        </div>
-    </div>
+    <section class="popup">
+      <div class="popup__window">
+        <form class="popup__form" name="profile-edit">
+          <h2 class="popup__title">Редактировать профиль</h2>
+          <input
+            type="text"
+            class="popup__item"
+            name="username"
+            id="username"
+            placeholder="Имя"
+            required
+          />
+          <input
+            type="text"
+            class="popup__item"
+            name="description"
+            id="description"
+            placeholder="Описание"
+            required
+          />
+          <button class="popup__submit-button" type="submit">Сохранить</button>
+        </form>
+        <button
+          class="popup__close-button"
+          type="button"
+          aria-label="Закрыть"
+        ></button>
+      </div>
+    </section>
 
-    <div class="popup popup_card-add">
-        <div class="popup__container">
-            <button type="button" class="popup__close-button" title="Закрыть"></button>
-            <form action="get" class="popup__form">
-                <div class="popup__main-field">
-                    <h2 calss="popup__title">Новое место</h2>
-                    <input class="popup__item" type="text" name="name" id="name" placeholder="Название" required>
-                    <input class="popup__item" type="url" name="occupation" placeholder="Ссылка на картинку" required>
-                    <button class="popup__submit-button" type="submit" id="save">Создать</button>
-                </div>
-            </form>
-        </div>
-    </div>
+    <section class="newplace">
+      <div class="newplace__window">
+        <form class="newplace__form" name="place-add">
+          <h2 class="newplace__title">Новое место</h2>
+          <input
+            type="text"
+            class="newplace__item"
+            name="place-name"
+            id="place-name"
+            placeholder="Название места"
+            required
+          />
+          <input
+            type="text"
+            class="newplace__item"
+            name="image-link"
+            id="image-link"
+            placeholder="URL картинки"
+            required
+          />
+          <button class="newplace__submit-button" type="submit">Создать</button>
+        </form>
+        <button
+          class="newplace__close-button"
+          type="button"
+          aria-label="Закрыть"
+        ></button>
+      </div>
+    </section>
 
-    <div class="popup popup_card">
-        <figure class="figure">
-            <button class="popup__close-button" type="button" title="Закрыть окно"></button>
-            <img class="popup__image" src="#" alt="#">
-            <figcaption class="figure__image"></figcaption>
+    <section class="image-big">
+      <div class="image-big__window">
+        <figure class="image-big__figure">
+          <img
+            class="image-big__image"
+            src="https://pictures.s3.yandex.net/frontend-developer/cards-compressed/baikal.jpg"
+            alt="alttext"
+          />
+          <figcaption class="image-big__figcaption"></figcaption>
         </figure>
-    </div>
+        <button
+          class="image-big__close-button"
+          type="button"
+          aria-label="Закрыть"
+        ></button>
+      </div>
+    </section>
 
-    <template id="element_add">
-        <li class="element">
-            <button class="element__delete-button" type="button" title="Удаление карточки"></button>
-            <img src="#" alt="#" class="element__image">
-            <div class="element__description">
-                <h2 class="popup__title"></h2>
-                <button class="element__like-button" type="button" title="Поставить лайк"></button>
-            </div>
-        </li>
+    <template id="place-template">
+      <div class="place">
+        <button
+          type="button"
+          class="place__delete"
+          aria-label="Удалить"
+        ></button>
+        <img class="place__image" src="" alt="" />
+        <div class="place__title-wrap">
+          <h2 class="place__title"></h2>
+          <button
+            type="button"
+            class="place__like"
+            aria-label="Нравится"
+          ></button>
+        </div>
+      </div>
     </template>
-
-<script src="./script.js"></script>
-</body>
-
+    
+    <script src="./scripts/array.js"></script>
+    <script src="./scripts/scripts.js"></script>
+  </body>
 </html>

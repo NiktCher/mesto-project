@@ -1,0 +1,28 @@
+.newplace__close-button {
+  margin-left: 8px;
+  padding: 0;
+  width: 32px;
+  height: 32px;
+
+  background-image: url(../../../images/close_Icon.svg);
+  background-color: transparent;
+  background-repeat: no-repeat;
+  background-size: contain;
+  z-index: 2;
+  border: none;
+  align-self: flex-start;
+  transition: opacity 0.3s linear;
+}
+
+@media screen and (max-width: 550px) {
+  .newplace__close-button {
+    width: 20px;
+    height: 20px;
+    align-self: flex-end;
+  }
+}
+
+.newplace__close-button:hover {
+  cursor: pointer;
+  opacity: 0.6;
+}
