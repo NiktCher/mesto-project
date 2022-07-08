@@ -69,7 +69,7 @@ function createCard(placeName, placeUrl) {
       document.querySelector(".image-big__image").src = placeUrl;
       document.querySelector(".image-big__image").alt = placeName;
       document.querySelector(".image-big__figcaption").textContent = placeName;
-      openImgBig();
+      openModalWindow(imgBig);
     });
   placeElement
     .querySelector(".place__delete")
@@ -105,7 +105,7 @@ editButton.addEventListener("click", openEditPopup);
 closeEditButton.addEventListener("click", function () {
   closeModalWindow(editPopup);
 });
-addButton.addEventListener("click", openNewPlace);
+addButton.addEventListener("click", () => openModalWindow(newPlace));
 closeNewPlaceButton.addEventListener("click", function () {
   closeModalWindow(newPlace);
 });
