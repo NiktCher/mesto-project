@@ -1,4 +1,3 @@
-
 //Профиль:
 const editButton = document.querySelector(".profile__edit-button");
 const closeEditButton = document.querySelector(".popup__close-button");
@@ -12,9 +11,9 @@ const profileName = document.querySelector(".profile__name");
 const profileSubtitle = document.querySelector(".profile__description");
 const imgBig = document.querySelector(".image-big");
 const closeBigImg = document.querySelector(".image-big__close-button");
-const editForm = document.querySelector(".popup__form"); 
+const editForm = document.querySelector(".popup__form");
 const newPlaceFormElement = document.querySelector(".newplace__form");
-const placeContainer = document.querySelector(".places"); 
+const placeContainer = document.querySelector(".places");
 
 //Открытие и закрытие окон:
 function openModalWindow(modalWindow) {
@@ -27,7 +26,7 @@ function closeModalWindow(modalWindow) {
 
 //Окно редактирования:
 function openEditPopup() {
-  username.value = profileName.textContent; 
+  username.value = profileName.textContent;
   description.value = profileSubtitle.textContent;
   openModalWindow(editPopup);
 }
@@ -36,9 +35,9 @@ function editFormSubmitHandler(evt) {
   evt.preventDefault();
   const name = username.value;
   const job = description.value;
-  profileName.textContent = name; 
+  profileName.textContent = name;
   profileSubtitle.textContent = job;
-  closeModalWindow(editPopup); 
+  closeModalWindow(editPopup);
 }
 
 //Карточки с фотографиями
@@ -47,21 +46,16 @@ initialCards.forEach((item) => {
   addCard(placeContainer, createCard(item.name, item.link));
 });
 
-//Добавление карточки через кнопку
-function openNewPlace() {
-  openModalWindow(newPlace);
-}
-
 function createCard(placeName, placeUrl) {
   const placeTemplate = document.querySelector("#place-template").content;
-  const placeElement = placeTemplate.querySelector(".place").cloneNode(true); 
-  placeElement.querySelector(".place__title").textContent = placeName; 
-  placeElement.querySelector(".place__image").src = placeUrl; 
-  placeElement.querySelector(".place__image").alt = placeName; 
+  const placeElement = placeTemplate.querySelector(".place").cloneNode(true);
+  placeElement.querySelector(".place__title").textContent = placeName;
+  placeElement.querySelector(".place__image").src = placeUrl;
+  placeElement.querySelector(".place__image").alt = placeName;
   placeElement
     .querySelector(".place__like")
     .addEventListener("click", function (evt) {
-      evt.target.classList.toggle("place__like_active"); 
+      evt.target.classList.toggle("place__like_active");
     });
   placeElement
     .querySelector(".place__image")
@@ -74,9 +68,10 @@ function createCard(placeName, placeUrl) {
   placeElement
     .querySelector(".place__delete")
     .addEventListener("click", function () {
-      const placeItem = placeElement.closest(".place"); 
-      placeItem.remove(); 
+      const placeItem = placeElement.closest(".place");
+      placeItem.remove();
     });
+  document.querySelector(".newplace__form").reset();
   return placeElement;
 }
 
@@ -86,21 +81,15 @@ function addCard(сontainer, element) {
 
 function newPlaceSubmitHandler(evt) {
   evt.preventDefault();
-  const name = document.querySelector("#place-name");
-  const url = document.querySelector("#image-link");
+  let name = document.querySelector("#place-name");
+  let url = document.querySelector("#image-link");
   addCard(placeContainer, createCard(name.value, url.value));
   closeModalWindow(newPlace);
 }
 
-//Открытие большой картинки:
-function openImgBig() {
-  openModalWindow(imgBig);
-}
-
-
 closeBigImg.addEventListener("click", function () {
   closeModalWindow(imgBig);
-}); 
+});
 editButton.addEventListener("click", openEditPopup);
 closeEditButton.addEventListener("click", function () {
   closeModalWindow(editPopup);
