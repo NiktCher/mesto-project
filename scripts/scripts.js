@@ -71,7 +71,6 @@ function createCard(placeName, placeUrl) {
       const placeItem = placeElement.closest(".place");
       placeItem.remove();
     });
-  document.querySelector(".newplace__form").reset();
   return placeElement;
 }
 
@@ -81,9 +80,10 @@ function addCard(сontainer, element) {
 
 function newPlaceSubmitHandler(evt) {
   evt.preventDefault();
-  let name = document.querySelector("#place-name");
-  let url = document.querySelector("#image-link");
+  const name = document.querySelector("#place-name");
+  const url = document.querySelector("#image-link");
   addCard(placeContainer, createCard(name.value, url.value));
+  newPlaceFormElement.reset();
   closeModalWindow(newPlace);
 }
 
