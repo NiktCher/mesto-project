@@ -1,6 +1,6 @@
 "use strict";
 const config = {
-  baseUrl: "https://nomoreparties.co/v1/plus-cohort-15",
+  baseUrl: "https://nomoreparties.co/v1/plus-cohort-16",
   headers: {
     authorization: "02e3bae3-763f-4a7f-868e-1d71b8eefe8f",
     "Content-Type": "application/json",
@@ -11,6 +11,7 @@ const checkResponse = (res) => {
   if (res.ok) {
     return res.json();
   }
+
   // если ошибка, отклоняем промис
   return Promise.reject(`Ошибка: ${res.status}`);
 };

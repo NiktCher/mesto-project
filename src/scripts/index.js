@@ -13,8 +13,8 @@ import {
 
 const avatar = document.querySelector(".avatar");
 const newPlace = document.querySelector(".popup_newplace");
-const profileTitle = document.querySelector(".profile__title");
-const profileSubtitle = document.querySelector(".profile__subtitle");
+const profileTitle = document.querySelector(".profile__name");
+const profileSubtitle = document.querySelector(".profile__description");
 const editPopup = document.querySelector(".popup_edit");
 const username = document.getElementById("username");
 const description = document.getElementById("description");
@@ -27,7 +27,7 @@ const addButton = document.querySelector(".profile__add-button");
 const avatarButton = document.querySelector(".profile__avatar");
 const placeContainer = document.querySelector(".places"); //Контейнер с карточками
 const avatarLink = document.getElementById("avatar-link");
-const profileImg = document.querySelector(".profile__img");
+const profileImg = document.querySelector(".profile__image");
 const name = document.querySelector("#place-name"); //Поле с названием
 const url = document.querySelector("#image-link"); //Поле со ссылкой
 let userId;
@@ -55,7 +55,7 @@ function openNewPlace() {
 //РЕДАКТИРОВАНИЕ ПРОФИЛЯ
 function openEditPopup() {
   //открытие модалки редактирования
-  username.value = profileTitle.textContent; // Заменяем заглушку на имя из профиля
+  username.value = profileTitle.textContent; 
   description.value = profileSubtitle.textContent;
   openModalWindow(editPopup);
 }
@@ -168,7 +168,7 @@ closeButtons.forEach((item) => {
   });
 });
 
-editButton.addEventListener("click", openEditPopup); //слушатель на открытие окна редактирования профиля
+editButton.addEventListener("click", openEditPopup); //слушатель на окно редактирования профиля
 addButton.addEventListener("click", openNewPlace); //слушатель на добавление нового места
 avatarButton.addEventListener("click", openAvatarPopup);
 newPlace.addEventListener("submit", newPlaceSubmitHandler);

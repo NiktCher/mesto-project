@@ -3,14 +3,13 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link rel="stylesheet" href="./pages/index.css" />
     <title>Mesto</title>
   </head>
 
   <body class="page">
     <header class="header">
       <img
-        src="./images/heder_logo.svg"
+        src="<%=require('./images/heder_logo.svg')%>"
         class="header__logo"
         alt="Логотип сайта"
       />
@@ -18,17 +17,16 @@
     <main class="content">
       <section class="profile">
         <div class="profile__avatar">
-          <img class="profile__image" src="./images/kysto.jpg" alt="Аватарка" />
+          <img class="profile__image" src="<%=require('./images/kysto.jpg')%>" alt="Аватарка" />
         </div>
         <div class="profile__info">
-          <h1 class="profile__name">Жак-Ив Кусто</h1>
+          <h1 class="profile__name"></h1>
           <button
             type="button"
             class="profile__edit-button"
-            title="Редактировать профиль"
-            id="edit-button"
+            aria-label="Редактировать профиль"
           ></button>
-          <p class="profile__description">Исследователь океана</p>
+          <p class="profile__description"></p>
         </div>
         <button type="button" class="profile__add-button"></button>
       </section>
@@ -107,7 +105,7 @@
           <button class="popup__submit-button" type="submit">Создать</button>
         </form>
         <button
-          class="newplace__close-button"
+          class="popup__close-button"
           type="button"
           aria-label="Закрыть"
         ></button>

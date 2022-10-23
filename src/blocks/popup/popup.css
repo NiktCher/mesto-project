@@ -12,6 +12,7 @@
   visibility: hidden;
   opacity: 0;
   transition: visibility 0s linear 800ms, opacity 800ms;
+  display: flex;
 }
 
 .popup::before {
