@@ -1,0 +1,15 @@
+.popup__window {
+  display: flex;
+  justify-content: space-between;
+  position: fixed;
+  z-index: 2;
+  margin-left: 39px;
+}
+
+@media screen and (max-width: 550px) {
+  .popup__window {
+    margin: 0;
+    width: calc(100% - 38px);
+    flex-direction: column-reverse;
+  }
+}
