@@ -1,6 +1,6 @@
 import './pages/index.css';
-import './components/index.js.js';
-import './components/cards.js.js';
-import './components/api.js.js';
-import './components/modal.js.js';
+import './components/index.js';
+import './components/cards.js';
+import './components/api.js';
+import './components/modal.js';
 import './components/validate.js';
