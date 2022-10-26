@@ -2,7 +2,7 @@
   "name": "mesto-project",
   "version": "1.0.0",
   "description": "* Интро  * Технологии",
-  "main": "index.js",
+  "main": "scripts.js",
   "scripts": {
     "build": "webpack --mode production",
     "dev": "webpack serve",
